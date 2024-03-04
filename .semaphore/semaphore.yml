@@ -16,3 +16,4 @@ blocks:
             - yarn install
             - sh install.sh
             - node index.js
+          parallelism: 50
